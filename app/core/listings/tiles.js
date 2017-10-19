@@ -19,7 +19,7 @@ define([
       template: 'core/listings/tiles',
 
       attributes: {
-        class: 'view-tiles js-listing-view file-listing flex'
+        class: 'view-tiles js-listing-view file-listing'
       },
 
       events: {
@@ -63,14 +63,15 @@ define([
         var items = [];
 
         if (fileColumn) {
-          items = this.collection.map(function(model) {
+          items = this.collection.map(function (model) {
             var item = {};
 
             item.id = model.get('id');
-            item.title = titleColumn ? model.get(titleColumn.id) : '';
-            item.subtitle = subTitleColumn ? model.get(subTitleColumn.id) : '';
-            item.type = typeColumn ? model.get(typeColumn.id) : '';
+            item.titleColumn = titleColumn ? titleColumn.id : null;
+            item.subtitleColumn = subTitleColumn ? subTitleColumn.id : null;
+            item.typeColumn = typeColumn ? typeColumn.id : null;
             item.thumb = model.has(fileColumn.id) ? model.get(fileColumn.id).get('thumbnail_url') : null;
+            item.model = model;
 
             return item;
           });

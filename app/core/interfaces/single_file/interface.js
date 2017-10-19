@@ -35,7 +35,9 @@ define([
       this.$('#fileInput').click();
     },
 
-    chooseFromUrl: function () {
+    chooseFromUrl: function (event) {
+      // Prevent this button from submitting the form
+      event.preventDefault();
       app.router.openModal({
         type: 'prompt',
         text: __t('enter_the_url_to_a_file'),
@@ -62,7 +64,10 @@ define([
       model.setLink(url, this.options.settings.get('allowed_filetypes'));
     },
 
-    chooseFromSystem: function () {
+    chooseFromSystem: function (event) {
+      // Prevent this button from submitting the form
+      event.preventDefault();
+
       var collection = app.files;
       var model;
       var fileModel = this.fileModel;
@@ -85,28 +90,18 @@ define([
     },
 
     edit: function () {
-      var EditView = require('modules/tables/views/EditView'); // eslint-disable-line import/no-unresolved
+      var OverlayEditView = require('modules/tables/views/OverlayEditView'); // eslint-disable-line import/no-unresolved
       var model = this.fileModel;
-      var view = new EditView({model: model});
-      view.headerOptions.route.isOverlay = true;
-      view.headerOptions.route.breadcrumbs = [];
-      view.headerOptions.basicSave = true;
 
-      view.events = {
-        'click .saved-success': function () {
-          this.save();
-        },
-        'click #removeOverlay': function () {
+      var view = new OverlayEditView({
+        model: model,
+        onSave: function () {
+          model.set(model.diff(view.editView.data()));
           app.router.removeOverlayPage(this);
         }
-      };
+      });
 
-      app.router.overlayPage(view);
-
-      view.save = function () {
-        model.set(model.diff(view.editView.data()));
-        app.router.removeOverlayPage(this);
-      };
+     app.router.overlayPage(view);
 
       // Fetch first time to get the nested tables
       if (!model.isNew()) {

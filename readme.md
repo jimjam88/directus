@@ -74,8 +74,8 @@ Huge thanks to the following contributors!
 #### Suggesting Enhancements
 When you are creating an enhancement suggestion, please include as many details as possible. Fill out the required template; including the steps that you imagine you would take if the feature you're requesting existed.
 
-#### Requesting features
-You can request and vote for other feature requests over at [our FeatHub page](http://feathub.com/directus/directus).
+#### Requesting Features
+Use our [Feature Request Tool](https://request.getdirectus.com/) to request new features or vote on existing commmunity suggestions.
 
 #### Your First Code Contribution
 Unsure where to begin contributing to Directus? You can start by looking through the [`Beginner`](https://github.com/directus/directus/issues?q=is%3Aopen+is%3Aissue+label%3ABeginner) and [`Help Wanted`](https://github.com/directus/directus/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22) issues. `Beginner` issues are issues that often only require a few lines of code. Help wanted issues are a bit more involved than beginner issues.
@@ -83,12 +83,32 @@ Unsure where to begin contributing to Directus? You can start by looking through
 #### Pull Requests
 Pull requests are always welcome for every part of Directus. Please make sure to adhere to our [`.editorconfig`](http://editorconfig.org) rules and to lint your code with [XO](https://github.com/sindresorhus/xo).
 
+## Public Roadmap
+_This is what we want to get done next:_
+
+### Q4 2017
+- CMS App Decoupled from API
+- API 2.0 - Speed improvements, better relational filtering / querying and increased i18n support
+
+### Q1 2018
+- [Support Node.JS as backend platform](https://request.getdirectus.com/r/3)
+- [Support for multiple database (multitenant)](https://request.getdirectus.com/r/1)
+- [Digital Asset Management improvements](https://request.getdirectus.com/r/2)
+- [Web Hooks](https://request.getdirectus.com/r/9)
+
+- [GraphQL endpoint](https://request.getdirectus.com/r/11)
+- [Support for PostgreSQL DBs](https://request.getdirectus.com/r/14)
+- Marketplace for easier distribution of interfaces / extensions
+
+
 ## Team
 - Project Lead: [Ben Haynes](https://github.com/benhaynes)
 - Development Lead: [Welling Guzmán](https://github.com/wellingguzman)
 - Interface Lead: [Rijk van Zanten](https://github.com/rijkvanzanten)
 
 Key developers: [coolov](https://github.com/coolov), [freen](https://github.com/freen), [jel-massih](https://github.com/jel-massih), [Lasha](https://github.com/Lasha)
+
+Sponsors: Bas Jansen
 
 ## Copyright, License, and Trademarks
 * Directus Core codebase released under the [GPLv3](http://www.gnu.org/copyleft/gpl.html) license.
